@@ -22,5 +22,8 @@ def create_chat_completion(messages, model=None, temperature=cfg.temperature, ma
             temperature=temperature,
             max_tokens=max_tokens
         )
-
+      
+    print(messages)
+    print(response)
+  
     return response.choices[0].message["content"]

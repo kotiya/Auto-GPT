@@ -147,7 +147,7 @@ def google_official_search(query, num_results=8):
         custom_search_engine_id = cfg.custom_search_engine_id
 
         # Initialize the Custom Search API service
-        service = build("customsearch", "v1", developerKey=api_key)
+        service = build("customsearch", "v1", developerKey=api_key, static_discovery=False) # bug of replit, more in: https://ask.replit.com/t/python-google-api-error-googleapiclient-errors-unknownapinameorversion-name-customsearch-version-v1/19255
 
         # Send the search query and retrieve the results
         result = service.cse().list(q=query, cx=custom_search_engine_id, num=num_results).execute()
